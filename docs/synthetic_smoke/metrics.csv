@@ -1,0 +1,4 @@
+step,split,samples,loss,accuracy_pct,error_pct,learning_rate,elapsed_seconds
+4,train,128,4.429901897907257,7.8125,92.1875,0.1,0.656
+8,train,128,5.5837342739105225,9.375,90.625,0.1,1.096
+8,validation,64,3.852688431739807,9.375,90.625,0.1,1.175

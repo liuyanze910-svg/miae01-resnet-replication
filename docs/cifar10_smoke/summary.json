@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "mode": "smoke",
+  "dataset": "cifar10",
+  "depth": 20,
+  "seed": 42,
+  "steps": 8,
+  "parameters": 269722,
+  "validation": {
+    "samples": 64,
+    "loss": 199.94561004638672,
+    "accuracy_pct": 1.5625,
+    "error_pct": 98.4375
+  },
+  "elapsed_seconds": 1.398
+}
