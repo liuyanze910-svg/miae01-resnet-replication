@@ -1,4 +1,7 @@
-"""CIFAR-10 residual network from He et al. (CVPR 2016), Section 4.2."""
+"""CIFAR-10 residual network from He et al. (CVPR 2016), Section 4.2.
+
+Build ResNet-20 and ResNet-32 with parameter-free Option A shortcuts.
+"""
 
 import torch.nn.functional as F
 from torch import nn

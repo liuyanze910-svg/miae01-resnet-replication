@@ -1,4 +1,7 @@
-"""Download, verify and read the official CIFAR-10 binary archive."""
+"""Download, verify and read the official CIFAR-10 binary archive.
+
+Build reproducible train and validation splits and apply training augmentation.
+"""
 
 import argparse
 import hashlib

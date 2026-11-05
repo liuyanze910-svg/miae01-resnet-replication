@@ -218,3 +218,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ResNet datasets, training outputs, and model checkpoints
+/data/
+/checkpoints/
+/runs/*
+!/runs/.gitkeep
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.tar.gz
+
+# Local environment overrides
+.env.*

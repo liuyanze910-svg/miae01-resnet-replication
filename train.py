@@ -1,4 +1,7 @@
-"""Shared ResNet-20/32 entry point for smoke tests and paper-budget runs."""
+"""Shared ResNet-20/32 entry point for smoke tests and paper-budget runs.
+
+Export a run configuration, a CSV metrics log, and a JSON summary.
+"""
 
 import argparse
 import csv
