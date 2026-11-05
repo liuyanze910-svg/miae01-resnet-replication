@@ -1,8 +1,6 @@
 # Reproducing ResNet-20 and ResNet-32 on CIFAR-10
 
-|                                                   |            |
-| ------------------------------------------------- | ---------- |
-| \*\*MIAE01 Machine Learning Programming and Tools | Week 1\*\* |
+**MIAE01 Machine Learning Programming and Tools · Week 1**
 
 This project reproduces part of the CIFAR-10 experiment in He et al.'s *Deep Residual Learning for Image Recognition*. We ask whether **ResNet-32 has a lower mean test error rate than ResNet-20** under a shared training and evaluation protocol. Table 6 gives the paper's final test error rates. The middle panel of Figure 6 shows how errors change during training. [Paper, Section 4.2](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf#page=7)
 
