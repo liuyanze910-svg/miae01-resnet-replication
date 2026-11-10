@@ -11,7 +11,7 @@ This project reproduces part of the CIFAR-10 experiment in He et al.'s *Deep Res
 
 **Week 1 progress.** ResNet-20 completed eight updates on real CIFAR-10 data using a Windows CPU. The archived logs show that data loading, training, validation, and result export all ran successfully. The full runs will be evaluated on the independent test set and compared with Table 6. [Week 1 run record](docs/week1_status.md)
 
-**Week 2 baseline.** Member A runs ResNet-20 with horizontal flipping enabled at probability 0.5, using seed 42 for the first 16,000-update run. This baseline supports Member B's depth comparison and Member C's horizontal-flip comparison. [Member A run record](docs/week2_a_status.md) · [Report draft and differences from the paper](docs/week2_a_report_draft.md)
+**Week 2 baseline.** Member A runs ResNet-20 with horizontal flipping enabled at probability 0.5, using seed 42 for the first 16,000-update run. This baseline supports Member B's depth comparison and Member C's horizontal-flip comparison. [Member A run record](docs/week2_status.md) · [Report draft and differences from the paper](docs/week2_report_draft.md)
 
 ## 1. Set up the environment
 
@@ -70,7 +70,7 @@ Each run creates a directory under `runs/`, such as `runs/resnet20-cifar10-smoke
 
 The archived ResNet-20 smoke test took about **1.4 seconds** for training and validation on Windows 11 with Python 3.12.14 and PyTorch 2.10.0+cpu. The logged interval excludes dataset download, loading, and model setup. The first download is approximately 162 MB. [Archived run summary](docs/cifar10_smoke/summary.json)
 
-The completed 16,000-update seed-42 baseline took **70 minutes and 16 seconds** for training and evaluation on an Intel Core Ultra 5 336H CPU with two PyTorch threads. [Baseline run summary](docs/results/week2_a/resnet20-flip-seed42/summary.json)
+The completed 16,000-update seed-42 baseline took **70 minutes and 16 seconds** for training and evaluation on an Intel Core Ultra 5 336H CPU with two PyTorch threads. [Baseline run summary](docs/results/week2/resnet20-flip-seed42/summary.json)
 
 ## 5. Project layout and sources
 
@@ -81,13 +81,13 @@ The completed 16,000-update seed-42 baseline took **70 minutes and 16 seconds** 
 | `train.py`                                       | Shared entry point for training, evaluation, and logging.                              |
 | `requirements.txt` and `configs/`                | Package versions and experiment settings.                                              |
 | `docs/experiment_plan.md` and `docs/sources.md`  | Week 1 planning record and source and license information. |
-| `docs/week2_a_status.md` and `docs/week2_a_report_draft.md` | Week 2 baseline record and the draft reproduction setup. |
-| `docs/results/week2_a/resnet20-flip-seed42/` | Archived baseline configuration, metrics, summary, and revision. |
+| `docs/week2_status.md` and `docs/week2_report_draft.md` | Week 2 baseline record and the draft reproduction setup. |
+| `docs/results/week2/resnet20-flip-seed42/` | Archived baseline configuration, metrics, summary, and revision. |
 | `docs/week1_status.md` and `docs/cifar10_smoke/` | Week 1 status and the three archived real-data smoke-test logs.                        |
 
 The project implements the paper independently. Yerlan Idelbayev's `akamaster/pytorch_resnet_cifar10` served as an architectural reference and uses the BSD 2-Clause license. This project includes no source files or weights from that repository. [Source and version notes](docs/sources.md) · [Reference implementation license](https://github.com/akamaster/pytorch_resnet_cifar10/blob/master/LICENSE)
 
-The Week 2 baseline used the trainer, model, and data loader from commit `5242c9337d8558343173534fbc3dd880fd6fb2eb`. The reduced-budget setup adds `configs/reduced_budget.json`, the two Week 2 documents, and the seed-42 logs listed above. It also updates this README. [Run revision record](docs/results/week2_a/resnet20-flip-seed42/revision.txt)
+The Week 2 baseline used the trainer, model, and data loader from commit `5242c9337d8558343173534fbc3dd880fd6fb2eb`. The reduced-budget setup adds `configs/reduced_budget.json`, the two Week 2 documents, and the seed-42 logs listed above. It also updates this README. [Run revision record](docs/results/week2/resnet20-flip-seed42/revision.txt)
 
 ## 6. Repository submissions
 

@@ -14,7 +14,7 @@ We test one claim from the CIFAR-10 experiments in Section 4.2 and Table 6 [1]. 
 
 We use an independent PyTorch implementation based on the CIFAR-10 architecture in [1, Section 4.2]. ResNet-20 has three stages with 16, 32, and 64 channels, with three residual blocks per stage. Each block has two 3 × 3 convolutions. Option A shortcuts use subsampling and zero-padding when the shape changes. Global average pooling feeds a ten-class classifier. The seed-42 baseline has 269,722 trainable parameters.
 
-The group repository is liuyanze910-svg/miae01-resnet-replication. Member A started from commit 5242c9337d8558343173534fbc3dd880fd6fb2eb. The reduced schedule was added in configs/reduced_budget.json. The README and Week 2 report and run notes were updated, and the baseline logs were copied into docs/results/week2_a/resnet20-flip-seed42/. The training, model, and data-loading code came from the base commit. The public PyTorch repository [3] was consulted as an architecture reference.
+The group repository is liuyanze910-svg/miae01-resnet-replication. Member A started from commit 5242c9337d8558343173534fbc3dd880fd6fb2eb. The reduced schedule was added in configs/reduced_budget.json. The README and Week 2 report and run notes were updated, and the baseline logs were copied into docs/results/week2/resnet20-flip-seed42/. The training, model, and data-loading code came from the base commit. The public PyTorch repository [3] was consulted as an architecture reference.
 
 ### Data and training
 
@@ -59,7 +59,7 @@ Member C tests whether turning off horizontal flipping changes ResNet-20 test er
 
 ## 7 Reproducibility and Contributions
 
-The seed-42 run is documented in docs/results/week2_a/resnet20-flip-seed42/. The summary gives the final scores, metrics.csv gives the step-16,000 test row, and run_config.json and revision.txt identify the settings and training-code revision. Member A (SuSiying) prepared the baseline setup and run record and drafted the reproduction setup. Add the group's verified B and C contributions and the overall reproduction judgment when their results are integrated.
+The seed-42 run is documented in docs/results/week2/resnet20-flip-seed42/. The summary gives the final scores, metrics.csv gives the step-16,000 test row, and run_config.json and revision.txt identify the settings and training-code revision. Member A (SuSiying) prepared the baseline setup and run record and drafted the reproduction setup. Add the group's verified B and C contributions and the overall reproduction judgment when their results are integrated.
 
 AI use for this section. ChatGPT assisted with the run configuration, execution, log checks, and report drafting. The reported scores were computed by the training and evaluation program. Update this statement with the other members' actual AI use before submitting the group report.
 
