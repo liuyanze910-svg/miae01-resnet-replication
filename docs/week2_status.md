@@ -31,6 +31,6 @@ python -B -u train.py --config configs/reduced_budget.json --depth 20 --seed 42 
 2. Check that `summary.json` reports `status` as `completed` and `steps` as `16000`. Verify that `metrics.csv` has one final `test` row for 10,000 images and that its `error_pct` matches `summary.json`.
 3. Retain `run_config.json`, `metrics.csv`, and `summary.json` together with the revision record. Give Members B and C the seed 42 test error and logs for their matched comparisons. Member B leads the Week 2 GitHub check-in.
 
-The seed-42 results passed these checks. The portable copies are in [the baseline results directory](results/week2_a/resnet20-flip-seed42/).
+The seed-42 results passed these checks. The portable copies are in [the baseline results directory](results/week2/resnet20-flip-seed42/).
 
 The earlier 64,000-update pilot used `configs/paper_budget.json`. Its logs belong to the separate paper-budget run. For Week 3, run the remaining two team-confirmed seeds, then compute the mean and sample standard deviation of the three 16,000-update test errors in Excel.
