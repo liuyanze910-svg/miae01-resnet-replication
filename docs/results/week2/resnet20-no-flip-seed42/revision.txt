@@ -1,4 +1,0 @@
-Training code commit: 5242c9337d8558343173534fbc3dd880fd6fb2eb
-Configuration: configs/reduced_budget.json
-Local configuration SHA-256: d30aba8212eafefe1472734f89fba3e328924f5c71bdec5d0bb79e71848da1a5
-Training options: --depth 20 --seed 42 --no-flip --device cpu
