@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "mode": "full",
+  "dataset": "cifar10",
+  "depth": 32,
+  "seed": 44,
+  "steps": 16000,
+  "parameters": 464154,
+  "validation": {
+    "samples": 5000,
+    "loss": 0.3191174083709717,
+    "accuracy_pct": 90.34,
+    "error_pct": 9.659999999999997
+  },
+  "test": {
+    "samples": 10000,
+    "loss": 0.33995046796798706,
+    "accuracy_pct": 89.86,
+    "error_pct": 10.14
+  },
+  "elapsed_seconds": 9722.363
+}
