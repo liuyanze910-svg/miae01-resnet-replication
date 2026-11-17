@@ -1,6 +1,6 @@
 # Reproducing ResNet-20 and ResNet-32 on CIFAR-10
 
-**MIAE01 Machine Learning Programming and Tools · Week 2**
+**MIAE01 Machine Learning Programming and Tools · Week 3**
 
 This project reproduces part of the CIFAR-10 experiment in He et al.'s *Deep Residual Learning for Image Recognition*. We ask whether **ResNet-32 has a lower mean test error rate than ResNet-20** under a shared training and evaluation protocol. Table 6 gives the paper's final test error rates. The middle panel of Figure 6 shows how errors change during training. [Paper, Section 4.2](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf#page=7)
 
@@ -12,6 +12,8 @@ This project reproduces part of the CIFAR-10 experiment in He et al.'s *Deep Res
 **Week 1 progress.** ResNet-20 completed eight updates on real CIFAR-10 data using a Windows CPU. The archived logs show that data loading, training, validation, and result export all ran successfully. The full runs will be evaluated on the independent test set and compared with Table 6. [Week 1 run record](docs/week1_status.md)
 
 **Week 2 baseline.** Member A runs ResNet-20 with horizontal flipping enabled at probability 0.5, using seed 42 for the first 16,000-update run. This baseline supports Member B's depth comparison and Member C's horizontal-flip comparison. [Member A run record](docs/week2_status.md) · [Report draft and differences from the paper](docs/week2_report_draft.md)
+
+**Week 3 baseline.** Member A completed seeds 43 and 44. The test errors for seeds 42, 43, and 44 are 10.23%, 10.58%, and 10.36%. Their mean is **10.39%**, with a sample standard deviation of **0.18 percentage points**. [Week 3 run record](docs/week3_status.md) · [Excel results and chart](docs/results/week3/baseline_results.xlsx)
 
 ## 1. Set up the environment
 
@@ -50,7 +52,7 @@ Add `--synthetic` to a smoke-test command to check the pipeline with generated i
 
 Use `configs/reduced_budget.json` for the team comparison. It uses 45,000 training images, 5,000 validation images, and 10,000 independent test images. The split seed is `2026` and the batch size is `128`. SGD starts at a learning rate of `0.1` and reduces it by a factor of 10 after updates `8,000` and `12,000`. The run ends at update `16,000`. The earlier 64,000-update configuration and pilot logs are kept separately under the paper budget.
 
-The Week 2 baseline uses training seed `42`. The proposed three-seed set is `42`, `43`, and `44`. Use the same seeds across conditions once the team confirms them. `--seed` controls model initialization, training-data shuffling, and random augmentation. The `split_seed` setting fixes the partition separately. Run the command from the repository root. If the archive is cached elsewhere, supply its containing folder with `--data-dir`.
+The completed baseline uses training seeds `42`, `43`, and `44`. Use the same seeds across conditions for the matched comparisons. `--seed` controls model initialization, training-data shuffling, and random augmentation. The `split_seed` setting fixes the partition separately. Run the command from the repository root. If the archive is cached elsewhere, supply its containing folder with `--data-dir`.
 
 ```powershell
 python -B -u train.py --config configs/reduced_budget.json --depth 20 --seed 42 --device cpu --output runs/week2-a-resnet20-seed42-16k
@@ -83,6 +85,7 @@ The completed 16,000-update seed-42 baseline took **70 minutes and 16 seconds** 
 | `docs/experiment_plan.md` and `docs/sources.md`  | Week 1 planning record and source and license information. |
 | `docs/week2_status.md` and `docs/week2_report_draft.md` | Week 2 baseline record and the draft reproduction setup. |
 | `docs/results/week2/resnet20-flip-seed42/` | Archived baseline configuration, metrics, summary, and revision. |
+| `docs/week3_status.md` and `docs/results/week3/` | Seeds 43 and 44, the three-seed baseline statistics, and the Excel workbook. |
 | `docs/week1_status.md` and `docs/cifar10_smoke/` | Week 1 status and the three archived real-data smoke-test logs.                        |
 
 The project implements the paper independently. Yerlan Idelbayev's `akamaster/pytorch_resnet_cifar10` served as an architectural reference and uses the BSD 2-Clause license. This project includes no source files or weights from that repository. [Source and version notes](docs/sources.md) · [Reference implementation license](https://github.com/akamaster/pytorch_resnet_cifar10/blob/master/LICENSE)

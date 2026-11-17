@@ -1,0 +1,8 @@
+Training code commit: 9cea1f51c2782c078ef4c64266bb423c2857873c
+Original seed-42 training code commit: 5242c9337d8558343173534fbc3dd880fd6fb2eb
+Training code matches seed 42: train.py, model.py, data.py
+Configuration: configs/reduced_budget.json
+Configuration SHA-256: 2fa72464c33c3fa125ec5f53d811391be1e3653d4514d7d3f98d47b2570b194a
+Training seed override: 44
+Device: Intel Core Ultra 5 336H CPU, 2 intra-op threads
+Command: python -B -u train.py --config configs/reduced_budget.json --depth 20 --seed 44 --device cpu --output runs/week3-a-resnet20-seed44-16k
