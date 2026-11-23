@@ -13,23 +13,25 @@ Cover membership layout reference: user-supplied Mure(4).pptx. ResNet content an
 
 ## Slide 2. The paper at a glance
 
-He, Zhang, Ren, and Sun presented residual learning at CVPR 2016. They studied degradation, where a deeper plain network can have higher training error. A shortcut carries information across layers and is added to a learned residual. The paper reports ImageNet and CIFAR-10 experiments. Our reproduction focuses on a CIFAR-10 ResNet-20 baseline and does not directly retest degradation in plain networks.
-Source: https://arxiv.org/abs/1512.03385 (Sections 1 and 4.2)
+Speaker script
+He, Zhang, Ren and Sun presented this paper at CVPR 2016. They observed that increasing the depth of a plain network can lead to higher training error, a phenomenon called degradation. They proposed residual learning to carry information across layers. Next, the diagram shows how the input travels through two paths.
+Source
+https://arxiv.org/abs/1512.03385 (Section 1)
 
-## Slide 3. Residual learning
+## Slide 3. Residual block: two paths for the input
 
-English speaker script
-The paper discusses degradation: increasing the depth of a plain network can increase training error, even though the deeper model has more capacity. This is an optimization issue rather than simply a gap between training and test performance. Residual learning represents a transformation as a correction F of x added to a shortcut S of x. When the shape is unchanged, S of x is the input itself. In our implementation, a ReLU follows the addition. When the shape changes, Option A subsamples the shortcut and pads its channels with zeros. Our experiment uses residual networks at two depths, so it does not directly retest degradation against a plain network.
-Group members: SuSiying 2260032041 / Liu Yanze 2260031728 / Liang Linlin 2260032082
+Speaker script
+The input x follows two paths. The convolutional branch learns a correction, while the shortcut carries input information. The branch outputs are added elementwise and passed through ReLU. When dimensions match, the shortcut passes x directly; at stage transitions Option A subsamples it and pads channels with zeros. The next slide expresses these paths as a formula.
 Sources
-https://arxiv.org/abs/1512.03385 (Sections 1 and 3, Figure 2)
+https://arxiv.org/abs/1512.03385 (Section 3, Figure 2)
 https://github.com/liuyanze910-svg/miae01-resnet-replication/blob/39c480f39e15bfde3b61f474207acc567f43a8b3/model.py
-Cover membership layout reference: user-supplied Mure(4).pptx. ResNet content and Art template retained. No MURE research content incorporated.
 
-## Slide 4. Shortcut connection: two paths
+## Slide 4. Expressing the two paths
 
-The input follows two paths. The convolutional branch learns a correction F(x); the shortcut carries S(x). Their outputs are added elementwise and passed through ReLU. When dimensions match, S(x) equals x. At stage transitions, Option A subsamples the shortcut and pads channels with zeros. The diagram is schematic; model.py defines the exact operations.
-Sources: https://arxiv.org/abs/1512.03385 (Section 3, Figure 2)
+Speaker script
+In the diagram F(x) denotes the correction learned by the convolutional branch, and S(x) denotes the shortcut. When dimensions match, S(x) equals x. At stage transitions the shortcut is subsampled and zero-padded. Our implementation applies ReLU after addition, yielding ReLU(F(x)+S(x)). Next we describe CIFAR-10 and the ResNet-20 baseline.
+Sources
+https://arxiv.org/abs/1512.03385 (Section 3)
 https://github.com/liuyanze910-svg/miae01-resnet-replication/blob/39c480f39e15bfde3b61f474207acc567f43a8b3/model.py
 
 ## Slide 5. Reproduction scope
