@@ -7,7 +7,8 @@ SuSiying (2260032041), 23 November 2026. Evidence snapshot: [`39c480f`](https://
 The confirmed team plan assigns A the Week 4 English introduction, reproduction scope, setup, an in-body deviation table, background/methods slides, and baseline evidence. B owns Paper vs. Ours, main figures, results analysis, and the main-experiment slides. C owns the extension and overall conclusion. B/C logs were read for setup verification and remain unchanged. No new standalone statistics or plotting scripts, duplicate setup tables, or full training runs are part of this update.
 
 - [English Member A report section](week4_a_report.md): introduction, scope, methods, the deviation table, contributions, AI statement, and references.
-- [Background and methods slides](slides/week4_a_background_methods.pptx): six slides matching the user's supplied white/pastel Art template previews, with editable foreground text, English speaker notes, and source references. The decorative backgrounds are reconstructed raster assets, not the original editable template file.
+- [Background and methods slides](slides/week4_a_background_methods.pptx): ten detailed slides matching the user's supplied white/pastel Art template previews, with editable foreground text and architecture/baseline tables, English speaker notes, and source references. The decorative backgrounds are reconstructed raster assets, not the original editable template file.
+- [Detailed speaker notes](week4_a_speaker_notes.md): the ten English scripts, Chinese preparation notes, source links, and questions for presentation preparation.
 - [Baseline evidence](week3_status.md): the original Week 2/3 logs remain the source of the baseline scores.
 
 ## Week 1-3 verification
@@ -21,6 +22,8 @@ The confirmed team plan assigns A the Week 4 English introduction, reproduction 
 | Shared experiment records | Nine A/B/C summaries agree with final CSV rows. Each has 16 training intervals, four validation rows, and one test row. Declared split, budget, optimizer, and schedule match. | Verified as archived |
 
 The review does not independently establish model-prediction accuracy or recreate a runtime environment. A used Windows and B/C used macOS. Same seed labels do not ensure identical random draws across depth/augmentation settings. These limitations are described in the report setup for the result authors to retain.
+
+The detailed follow-up explains the 20-layer count and feature-map sizes, exact post-addition ReLU, learning-rate boundaries, split versus training seeds, and sample-SD interpretation. It also makes clear that `train.py` saves logs but no model weights. The archived logs support consistency checks, not loading the original trained model for independent re-evaluation.
 
 ## Member A baseline handoff
 
@@ -49,5 +52,6 @@ The README already provides pinned training dependencies, data download, smoke/f
 - `docs/week4_a_report.md`: current A section draft, with the only full setup-deviation table.
 - `docs/week4_a_status.md`: this verification and handoff record.
 - `docs/slides/week4_a_background_methods.pptx`: A's background/methods slides.
+- `docs/week4_a_speaker_notes.md`: detailed English speaker scripts and Chinese preparation notes.
 
 Week 5 remains for revising A's sections and merging the three authors' report sections, checking citations and figure numbering, and preparing the combined English PDF. The main results and extension text remain with B and C.

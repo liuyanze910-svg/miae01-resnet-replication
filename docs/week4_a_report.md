@@ -1,6 +1,6 @@
 # ResNet Replication on CIFAR-10: Background and Reproduction Setup
 
-Member A: SuSiying (2260032041)  
+Member A: SuSiying (2260032041)
 Week 4, 23-29 November 2026
 
 ## 1. Introduction and reproduction scope
@@ -19,6 +19,10 @@ The group repository is [liuyanze910-svg/miae01-resnet-replication](https://gith
 
 The implementation follows the paper's CIFAR-10 architecture. ResNet-20 starts with a 3 x 3 convolution, followed by three stages with 16, 32, and 64 channels. Each stage contains three residual blocks, each with two 3 x 3 convolutions. Strided convolutions reduce the spatial dimensions between stages. Parameter-free Option A shortcuts subsample the input and add zero channels when dimensions change. Global average pooling feeds a ten-class linear classifier. The model has 269,722 trainable parameters. ResNet-32 uses five blocks per stage and has 464,154 parameters.
 
+The ResNet-20 depth count is 1 stem convolution + 3 stages x 3 blocks x 2 convolutions + 1 fully connected layer = 20 weighted layers. Batch normalization and ReLU operations are not included in this naming convention. Starting from a 3 x 32 x 32 input, the stage outputs have shapes 16 x 32 x 32, 32 x 16 x 16, and 64 x 8 x 8 in channel-height-width order. Global average pooling produces a 64-dimensional vector, and the classifier produces ten logits.
+
+In the implemented block, F(x) contains a convolution-BN-ReLU sequence followed by a second convolution and BN. The block output is ReLU(F(x) + S(x)), where S(x) is the identity when dimensions agree. At stage transitions, Option A changes S(x) by strided subsampling and channel zero padding. Thus the abstract residual sum F(x) + x and the complete implemented block should be distinguished [5].
+
 Convolutions use batch normalization and ReLU. Training starts from Kaiming normal initialization without pretrained weights or dropout. The project implements the models independently. Idelbayev's PyTorch CIFAR-10 ResNet repository served as an architecture reference, as documented in the source notes [3, 5]. The source notes state that no upstream source files or weights were copied.
 
 ### 2.2 Data and preprocessing
@@ -31,7 +35,11 @@ The loader converts pixel values to floating point, divides by 255, and subtract
 
 All completed comparison runs use training seeds 42, 43, and 44, independently of the fixed split seed. The trainer uses cross-entropy and SGD with batch size 128, momentum 0.9, weight decay 0.0001, and initial learning rate 0.1. The learning rate becomes 0.01 after update 8,000 and 0.001 after update 12,000. Training ends at update 16,000. With `drop_last=True`, every optimizer update processes a full batch, for 2,048,000 image presentations per run.
 
+One optimizer update consists of a forward pass, cross-entropy calculation, gradient backpropagation, and an SGD parameter update on one batch. The precise learning-rate ranges are updates 1-8,000 at 0.1, 8,001-12,000 at 0.01, and 12,001-16,000 at 0.001. The script changes the rate after the milestone update. Image presentations include repeat visits to training images and should not be described as distinct images or epochs.
+
 The trainer records training metrics every 1,000 updates and validation metrics at updates 5,000, 10,000, 15,000, and 16,000. It evaluates the final weights once on all 10,000 test images. The primary metric is `test.error_pct` in `summary.json`, cross-checked against the final test row in `metrics.csv`. The evaluation rule uses the final model rather than selecting a checkpoint by test performance. Report means and sample standard deviations across the three training seeds, with sample SD using denominator n - 1. Error rates use percent, while error differences and their SD use percentage points (pp).
+
+The split seed controls the NumPy permutation used for the training/validation partition. Training seeds control model initialization and training randomness, with a separately seeded DataLoader generator for shuffling. The three final test evaluations use the same 10,000 test images. Consequently, sample SD describes variation across three training seeds on one fixed split. It is not a confidence interval or an estimate of variation across independent test datasets.
 
 ### 2.4 Execution environment
 
@@ -41,7 +49,7 @@ B and C's archived configurations record macOS on arm64 and CPU execution, PyTor
 
 ## 3. Deviations from the paper
 
-Table 1 is the setup-deviation table for this contribution. It distinguishes observed differences from details that cannot be established from the paper alone. It belongs in the report body.
+Table 1 records the setup deviations for this contribution. It distinguishes observed differences from details that cannot be established from the paper alone.
 
 Table 1. Original settings, implemented settings, and reasons for differences
 
@@ -64,6 +72,8 @@ Matching seed labels supports organized seed-level comparisons but does not guar
 Member A completed the eight-update real-data smoke test in Week 1, seed 42 in Week 2, and seeds 43 and 44 in Week 3 [6]. The three baseline test errors are 10.23%, 10.58%, and 10.36%, giving a mean of 10.39% and a sample SD of 0.18 pp. These values are supplied to B and C as baseline inputs. Their main comparison tables, figures, and conclusions remain in the respective members' contributions.
 
 Each baseline archive contains `run_config.json`, `metrics.csv`, `summary.json`, and `revision.txt`. The Week 4 review checked completion status, 16,000 updates, fixed split and optimization settings, 16 training records, four validation evaluations, and one final test evaluation. Final validation/test rows agree with their summaries. The 12 corresponding files in the local Week 3 A update folder also agree with the repository after parsing JSON/CSV and normalizing text line endings. These checks establish archive consistency, not independent re-evaluation of model predictions or a new dataset checksum check.
+
+The current trainer exports logs but does not save model weights or an optimizer checkpoint. The archive therefore supports review of the recipe and recorded metrics, but cannot directly reproduce the predictions of the original trained model. Independent re-evaluation would require the original weights or a new training run. No such run was performed for this Week 4 update.
 
 SuSiying (2260032041) prepared the baseline setup and logs in earlier weeks and contributes the Week 4 introduction, scope, methods, deviation table, background/methods slides, and evidence review. Member B's depth experiments and Member C's extension are credited to those members. This document is Member A's section draft for the group's later report assembly.
 
