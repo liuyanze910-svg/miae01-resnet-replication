@@ -7,9 +7,9 @@ SuSiying (2260032041), 23 November 2026. Evidence snapshot: [`39c480f`](https://
 The confirmed team plan assigns A the Week 4 English introduction, reproduction scope, setup, an in-body deviation table, background/methods slides, and baseline evidence. B owns Paper vs. Ours, main figures, results analysis, and the main-experiment slides. C owns the extension and overall conclusion. B/C logs were read for setup verification and remain unchanged. No new standalone statistics or plotting scripts, duplicate setup tables, or full training runs are part of this update.
 
 - [English Member A report section](week4_a_report.md): introduction, scope, methods, the deviation table, contributions, AI statement, and references.
-- [English background and methods slides](slides/week4_a_background_methods.pptx) and [Chinese version](slides/week4_a_background_methods_cn.pptx): ten detailed slides per language matching the user's supplied white/pastel Art template previews, with editable foreground text and architecture/baseline tables, speaker notes in each deck's language, and source references. The decorative backgrounds are reconstructed raster assets, not the original editable template file.
-- Both covers list the full team: SuSiying / 苏思颖 (2260032041), Liu Yanze / 刘彦泽 (2260031728), and Liang Linlin / 梁琳琳 (2260032082). The group-member strip follows the user-supplied Mure(4).pptx cover reference, while retaining ResNet content and the existing Art design. The Chinese version translates foreground text, table labels, and speaker notes.
-- [Detailed speaker notes](week4_a_speaker_notes.md): the ten English scripts, Chinese preparation notes, source links, and questions for presentation preparation.
+- [English background and methods slides](slides/week4_a_background_methods.pptx): 13 detailed slides with editable text and tables, speaker notes, and source references.
+- The cover lists SuSiying (2260032041), Liu Yanze (2260031728), and Liang Linlin (2260032082).
+- [Detailed speaker notes](week4_a_speaker_notes.md): the English scripts, source links, and questions for presentation preparation.
 - [Baseline evidence](week3_status.md): the original Week 2/3 logs remain the source of the baseline scores.
 
 ## Week 1-3 verification
@@ -19,7 +19,7 @@ The confirmed team plan assigns A the Week 4 English introduction, reproduction 
 | Week 1 | Real-data and synthetic summaries both record eight ResNet-20 updates. [Real-data record](week1_status.md). Initial code and English documentation are in the repository history. | Complete |
 | Week 2 | Seed 42, 16,000 updates, 10,000 test images, test error 10.23%, accuracy 89.77%. Summary agrees with the final CSV row. | Complete |
 | Week 3 | Seeds 43/44, 16,000 updates each, test errors 10.58%/10.36%. All three seeds yield mean error 10.39% and sample SD 0.18 pp. | Complete |
-| Local A archive | Read `D:\编程工具\小组pre\ResNet_Week3_A_GitHub_Update`. Its 12 baseline log/config/revision files agree with GitHub under parsed-content comparison. | Verified |
+| Local A archive | Read the local Week 3 A update folder. Its 12 baseline log/config/revision files agree with GitHub under parsed-content comparison. | Verified |
 | Shared experiment records | Nine A/B/C summaries agree with final CSV rows. Each has 16 training intervals, four validation rows, and one test row. Declared split, budget, optimizer, and schedule match. | Verified as archived |
 
 The review does not independently establish model-prediction accuracy or recreate a runtime environment. A used Windows and B/C used macOS. Same seed labels do not ensure identical random draws across depth/augmentation settings. These limitations are described in the report setup for the result authors to retain.
@@ -53,7 +53,6 @@ The README already provides pinned training dependencies, data download, smoke/f
 - `docs/week4_a_report.md`: current A section draft, with the only full setup-deviation table.
 - `docs/week4_a_status.md`: this verification and handoff record.
 - `docs/slides/week4_a_background_methods.pptx`: A's English background/methods slides with the full team cover.
-- `docs/slides/week4_a_background_methods_cn.pptx`: Chinese slides and speaker notes, with the same team cover.
-- `docs/week4_a_speaker_notes.md`: detailed English speaker scripts and Chinese preparation notes.
+- `docs/week4_a_speaker_notes.md`: detailed English speaker scripts and preparation questions.
 
 Week 5 remains for revising A's sections and merging the three authors' report sections, checking citations and figure numbering, and preparing the combined English PDF. The main results and extension text remain with B and C.
