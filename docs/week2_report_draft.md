@@ -1,5 +1,7 @@
 # ResNet Reproduction on CIFAR 10
 
+> Historical Week 3 baseline draft. Member A's current introduction, scope, setup, and in-body deviation table are in [the Week 4 A section](week4_a_report.md). The pending B/C results text below is historical and is not the current group result verdict. B and C retain responsibility for their respective report sections.
+
 Member A Week 3 Baseline Draft
 
 ## 1 Introduction and Claim

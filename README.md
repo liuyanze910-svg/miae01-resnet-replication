@@ -1,6 +1,6 @@
 # Reproducing ResNet-20 and ResNet-32 on CIFAR-10
 
-**MIAE01 Machine Learning Programming and Tools · Week 3**
+**MIAE01 Machine Learning Programming and Tools · Week 4**
 
 This project reproduces part of the CIFAR-10 experiment in He et al.'s *Deep Residual Learning for Image Recognition*. We ask whether **ResNet-32 has a lower mean test error rate than ResNet-20** under a shared training and evaluation protocol. Table 6 gives the paper's final test error rates. The middle panel of Figure 6 shows how errors change during training. [Paper, Section 4.2](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf#page=7)
 
@@ -14,6 +14,8 @@ This project reproduces part of the CIFAR-10 experiment in He et al.'s *Deep Res
 **Week 2 baseline.** Member A runs ResNet-20 with horizontal flipping enabled at probability 0.5, using seed 42 for the first 16,000-update run. This baseline supports Member B's depth comparison and Member C's horizontal-flip comparison. [Member A run record](docs/week2_status.md) · [Report draft and differences from the paper](docs/week2_report_draft.md)
 
 **Week 3 baseline.** Member A completed seeds 43 and 44. The test errors for seeds 42, 43, and 44 are 10.23%, 10.58%, and 10.36%. Their mean is **10.39%**, with a sample standard deviation of **0.18 percentage points**. [Week 3 run record](docs/week3_status.md) · [Excel results and chart](docs/results/week3/baseline_results.xlsx)
+
+**Week 4, Member A.** SuSiying (2260032041) completed the English introduction, reproduction scope, setup, in-body deviation table, and background/methods slides. [Current A report sections](docs/week4_a_report.md) · [A progress and evidence review](docs/week4_a_status.md) · [A slides](docs/slides/week4_a_background_methods.pptx). The original baseline logs remain unchanged. Member B owns the main results comparison/figures and discrepancy analysis, while Member C owns the extension and overall conclusion. The Week 2/3 report draft is kept as a historical record.
 
 ## 1. Set up the environment
 
@@ -95,3 +97,7 @@ The Week 2 baseline used the trainer, model, and data loader from commit `5242c9
 ## 6. Repository submissions
 
 Archive logs needed for assessment or reproducibility in the appropriate experiment folder under `docs/` and commit them with the related code, configuration, and documentation. Keep datasets, checkpoints, files over 50 MB, and credentials outside the repository.
+
+Every commit message must contain the submitting member's student ID, full name, and actual change. For Member A, use a message such as `2260032041 SuSiying Week4 add introduction, reproduction setup and methods slides`. Push at least one meaningful weekly commit before Sunday 23:59. This week's check is 29 November 2026. The course's tentative presentation date is 12 December 2026. Each member should contribute from their own account.
+
+The confirmed plan keeps key result charts and mean/sample-SD calculations in Excel using the existing logs. The setup-deviation table belongs in the report body. At final submission, merge the members' English sections, confirm contributions and AI usage statements, export the report as PDF, resolve the project-license decision recorded in [source notes](docs/sources.md), and tag the finalized repository `v1.0`. The current Week 4 A update is a section draft.
