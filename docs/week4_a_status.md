@@ -7,7 +7,8 @@ SuSiying (2260032041), 23 November 2026. Evidence snapshot: [`39c480f`](https://
 The confirmed team plan assigns A the Week 4 English introduction, reproduction scope, setup, an in-body deviation table, background/methods slides, and baseline evidence. B owns Paper vs. Ours, main figures, results analysis, and the main-experiment slides. C owns the extension and overall conclusion. B/C logs were read for setup verification and remain unchanged. No new standalone statistics or plotting scripts, duplicate setup tables, or full training runs are part of this update.
 
 - [English Member A report section](week4_a_report.md): introduction, scope, methods, the deviation table, contributions, AI statement, and references.
-- [Background and methods slides](slides/week4_a_background_methods.pptx): ten detailed slides matching the user's supplied white/pastel Art template previews, with editable foreground text and architecture/baseline tables, English speaker notes, and source references. The decorative backgrounds are reconstructed raster assets, not the original editable template file.
+- [English background and methods slides](slides/week4_a_background_methods.pptx) and [Chinese version](slides/week4_a_background_methods_cn.pptx): ten detailed slides per language matching the user's supplied white/pastel Art template previews, with editable foreground text and architecture/baseline tables, speaker notes in each deck's language, and source references. The decorative backgrounds are reconstructed raster assets, not the original editable template file.
+- Both covers list the full team: SuSiying / 苏思颖 (2260032041), Liu Yanze / 刘彦泽 (2260031728), and Liang Linlin / 梁琳琳 (2260032082). The group-member strip follows the user-supplied Mure(4).pptx cover reference, while retaining ResNet content and the existing Art design. The Chinese version translates foreground text, table labels, and speaker notes.
 - [Detailed speaker notes](week4_a_speaker_notes.md): the ten English scripts, Chinese preparation notes, source links, and questions for presentation preparation.
 - [Baseline evidence](week3_status.md): the original Week 2/3 logs remain the source of the baseline scores.
 
@@ -51,7 +52,8 @@ The README already provides pinned training dependencies, data download, smoke/f
 - `docs/week2_report_draft.md`: historical-draft notice pointing to the new A sections.
 - `docs/week4_a_report.md`: current A section draft, with the only full setup-deviation table.
 - `docs/week4_a_status.md`: this verification and handoff record.
-- `docs/slides/week4_a_background_methods.pptx`: A's background/methods slides.
+- `docs/slides/week4_a_background_methods.pptx`: A's English background/methods slides with the full team cover.
+- `docs/slides/week4_a_background_methods_cn.pptx`: Chinese slides and speaker notes, with the same team cover.
 - `docs/week4_a_speaker_notes.md`: detailed English speaker scripts and Chinese preparation notes.
 
 Week 5 remains for revising A's sections and merging the three authors' report sections, checking citations and figure numbering, and preparing the combined English PDF. The main results and extension text remain with B and C.
