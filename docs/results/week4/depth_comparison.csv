@@ -1,0 +1,4 @@
+seed,resnet20_test_error_percent,resnet32_test_error_percent,resnet20_minus_resnet32_pp
+42,10.23,9.78,0.45
+43,10.58,9.95,0.63
+44,10.36,10.14,0.22

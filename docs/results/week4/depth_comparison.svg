@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470">
+<title>Matched CIFAR-10 test error by ResNet depth</title>
+<desc>Three seed-level comparisons of ResNet-20 and ResNet-32 with horizontal flipping.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#222} .grid{stroke:#d9dee5;stroke-width:1} .axis{stroke:#333;stroke-width:1.2} .bar20{fill:#4472c4} .bar32{fill:#ed7d31} .value{font-size:12px} .label{font-size:13px} .title{font-size:17px;font-weight:700}</style>
+<text x="380.0" y="23" text-anchor="middle" class="title">Matched test error by depth (16,000 updates)</text>
+<line x1="78" y1="392.0" x2="732" y2="392.0" class="grid"/>
+<text x="68" y="396.0" text-anchor="end" class="label">0%</text>
+<line x1="78" y1="335.4" x2="732" y2="335.4" class="grid"/>
+<text x="68" y="339.4" text-anchor="end" class="label">2%</text>
+<line x1="78" y1="278.7" x2="732" y2="278.7" class="grid"/>
+<text x="68" y="282.7" text-anchor="end" class="label">4%</text>
+<line x1="78" y1="222.1" x2="732" y2="222.1" class="grid"/>
+<text x="68" y="226.1" text-anchor="end" class="label">6%</text>
+<line x1="78" y1="165.4" x2="732" y2="165.4" class="grid"/>
+<text x="68" y="169.4" text-anchor="end" class="label">8%</text>
+<line x1="78" y1="108.8" x2="732" y2="108.8" class="grid"/>
+<text x="68" y="112.8" text-anchor="end" class="label">10%</text>
+<line x1="78" y1="52.2" x2="732" y2="52.2" class="grid"/>
+<text x="68" y="56.2" text-anchor="end" class="label">12%</text>
+<line x1="78" y1="38" x2="78" y2="392" class="axis"/>
+<line x1="78" y1="392" x2="732" y2="392" class="axis"/>
+<rect x="161.0" y="102.3" width="46.0" height="289.7" class="bar20"/>
+<text x="184.0" y="95.3" text-anchor="middle" class="value">10.23</text>
+<rect x="190.0" y="115.0" width="46.0" height="277.0" class="bar32"/>
+<text x="213.0" y="108.0" text-anchor="middle" class="value">9.78</text>
+<text x="187.0" y="416" text-anchor="middle" class="label">Seed 42</text>
+<rect x="379.0" y="92.4" width="46.0" height="299.6" class="bar20"/>
+<text x="402.0" y="85.4" text-anchor="middle" class="value">10.58</text>
+<rect x="408.0" y="110.2" width="46.0" height="281.8" class="bar32"/>
+<text x="431.0" y="103.2" text-anchor="middle" class="value">9.95</text>
+<text x="405.0" y="416" text-anchor="middle" class="label">Seed 43</text>
+<rect x="597.0" y="98.6" width="46.0" height="293.4" class="bar20"/>
+<text x="620.0" y="91.6" text-anchor="middle" class="value">10.36</text>
+<rect x="626.0" y="104.8" width="46.0" height="287.2" class="bar32"/>
+<text x="649.0" y="97.8" text-anchor="middle" class="value">10.14</text>
+<text x="623.0" y="416" text-anchor="middle" class="label">Seed 44</text>
+<rect x="540" y="436" width="14" height="14" class="bar20"/><text x="560" y="448" class="label">ResNet-20</text>
+<rect x="652" y="436" width="14" height="14" class="bar32"/><text x="672" y="448" class="label">ResNet-32</text>
+</svg>

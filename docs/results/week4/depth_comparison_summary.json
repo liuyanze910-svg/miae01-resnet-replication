@@ -1,0 +1,36 @@
+{
+  "protocol": {
+    "steps": 16000,
+    "test_samples": 10000,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "augmentation": "horizontal_flip_probability_0.5"
+  },
+  "resnet20": {
+    "paper_test_error_percent": 8.75,
+    "mean_test_error_percent": 10.39,
+    "sample_sd_test_error_percent": 0.17691806012953865,
+    "gap_vs_paper_percentage_points": 1.6400000000000006
+  },
+  "resnet32": {
+    "paper_test_error_percent": 7.51,
+    "mean_test_error_percent": 9.956666666666669,
+    "sample_sd_test_error_percent": 0.18009256878986768,
+    "gap_vs_paper_percentage_points": 2.446666666666669
+  },
+  "paired_depth_difference": {
+    "definition": "ResNet-20 error minus ResNet-32 error, in percentage points",
+    "per_seed_percentage_points": [
+      0.45000000000000284,
+      0.6299999999999955,
+      0.21999999999999886
+    ],
+    "mean_percentage_points": 0.4333333333333324,
+    "sample_sd_percentage_points": 0.20550750189064323,
+    "all_seeds_favor_resnet32": true,
+    "paper_mean_improvement_percentage_points": 1.2400000000000002
+  }
+}
