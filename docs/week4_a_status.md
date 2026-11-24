@@ -7,9 +7,8 @@ SuSiying (2260032041), 23 November 2026. Evidence snapshot: [`39c480f`](https://
 The confirmed team plan assigns A the Week 4 English introduction, reproduction scope, setup, an in-body deviation table, background/methods slides, and baseline evidence. B owns Paper vs. Ours, main figures, results analysis, and the main-experiment slides. C owns the extension and overall conclusion. B/C logs were read for setup verification and remain unchanged. No new standalone statistics or plotting scripts, duplicate setup tables, or full training runs are part of this update.
 
 - [English Member A report section](week4_a_report.md): introduction, scope, methods, the deviation table, contributions, AI statement, and references.
-- [English background and methods slides](slides/week4_a_background_methods.pptx): 8 consolidated slides with editable text and tables, speaker notes, and source references.
+- [English background and methods slides](slides/week4_a_background_methods.pptx): 8 consolidated slides with editable text and tables.
 - The cover lists SuSiying (2260032041), Liu Yanze (2260031728), and Liang Linlin (2260032082).
-- [Detailed speaker notes](week4_a_speaker_notes.md): the English scripts, source links, and questions for presentation preparation.
 - [Baseline evidence](week3_status.md): the original Week 2/3 logs remain the source of the baseline scores.
 
 ## Week 1-3 verification
@@ -53,6 +52,5 @@ The README already provides pinned training dependencies, data download, smoke/f
 - `docs/week4_a_report.md`: current A section draft, with the only full setup-deviation table.
 - `docs/week4_a_status.md`: this verification and handoff record.
 - `docs/slides/week4_a_background_methods.pptx`: A's English background/methods slides with the full team cover.
-- `docs/week4_a_speaker_notes.md`: detailed English speaker scripts and preparation questions.
 
 Week 5 remains for revising A's sections and merging the three authors' report sections, checking citations and figure numbering, and preparing the combined English PDF. The main results and extension text remain with B and C.
