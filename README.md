@@ -15,6 +15,8 @@ This project reproduces part of the CIFAR-10 experiment in He et al.'s *Deep Res
 
 **Week 3 baseline.** Member A completed the remaining ResNet-20 flip seeds. The test errors for seeds 42, 43, and 44 are 10.23%, 10.58%, and 10.36%. Their mean is **10.39%**, with a sample standard deviation of **0.18 percentage points**. Member B completed ResNet-32 flip seeds 43 and 44, and Member C completed the no-flip extension. [Week 3 baseline record](docs/week3_status.md) · [Excel results and chart](docs/results/week3/baseline_results.xlsx)
 
+**Week 4, Member A.** SuSiying (2260032041) completed the English introduction, reproduction scope, setup, in-body deviation table, and background/methods slides. The 8-slide presentation covers the architecture, training schedule, baseline results, and limits on comparison. [Current A report sections](docs/week4_a_report.md) · [A progress and evidence review](docs/week4_a_status.md) · [A slides](docs/slides/week4_a_background_methods.pptx). The original baseline logs remain unchanged. Member B owns the main results comparison/figures and discrepancy analysis, while Member C owns the extension and overall conclusion. The Week 2/3 report draft is kept as a historical record.
+
 **Week 4 integration.** Across matched seeds, ResNet-32 has lower error than ResNet-20 by 0.45, 0.63, and 0.22 percentage points, for a mean improvement of **0.43 ± 0.21 percentage points**. This supports the paper's depth claim in direction under the 16,000-update protocol, but the improvement is smaller than the paper's 1.24-point difference. The horizontal-flip ablation also shows a consistent **1.73 ± 0.07 percentage-point** error increase when flipping is disabled. [Week 4 analysis record](docs/week4_status.md) · [Depth comparison CSV](docs/results/week4/depth_comparison.csv) · [Depth comparison figure](docs/results/week4/depth_comparison.svg)
 
 | Condition | Paper test error | Ours mean ± sample SD | Gap vs paper |
@@ -103,3 +105,7 @@ The Week 2 baseline used the trainer, model, and data loader from commit `5242c9
 ## 6. Repository submissions
 
 Archive logs needed for assessment or reproducibility in the appropriate experiment folder under `docs/` and commit them with the related code, configuration, and documentation. Keep datasets, checkpoints, files over 50 MB, and credentials outside the repository.
+
+Every commit message must contain the submitting member's student ID, full name, and actual change. For Member A, use a message such as `2260032041 SuSiying Week4 add introduction, reproduction setup and methods slides`. Push at least one meaningful weekly commit before Sunday 23:59. This week's check is 29 November 2026. The course's tentative presentation date is 12 December 2026. Each member should contribute from their own account.
+
+The confirmed plan keeps key result charts and mean/sample-SD calculations in Excel using the existing logs. The setup-deviation table belongs in the report body. At final submission, merge the members' English sections, confirm contributions and AI usage statements, export the report as PDF, resolve the project-license decision recorded in [source notes](docs/sources.md), and tag the finalized repository `v1.0`. The current Week 4 A update is a section draft.
